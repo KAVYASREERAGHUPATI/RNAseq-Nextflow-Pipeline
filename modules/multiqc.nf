@@ -1,4 +1,5 @@
 
+
 process MULTIQC {
 
     tag "${report_type}"
@@ -19,7 +20,13 @@ process MULTIQC {
     """
     multiqc . \\
         --force \\
-        --filename multiqc_${report_type}.html \\
-        --data-dir multiqc_${report_type}_data
+        --filename multiqc_${report_type}.html
+
+    if [ -d multiqc_data ]; then
+        mv multiqc_data multiqc_${report_type}_data
+    else
+        echo "ERROR: MultiQC data directory not found"
+        exit 1
+    fi
     """
 }
