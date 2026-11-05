@@ -1,0 +1,3 @@
+patient_id,r1,r2
+12_067,/path/to/SRR23079049_1.fastq.gz,/path/to/SRR23079049_2.fastq.gz
+15_067,/path/to/SRR23079278_1.fastq.gz,/path/to/SRR23079278_2.fastq.gz
